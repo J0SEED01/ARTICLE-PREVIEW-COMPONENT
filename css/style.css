@@ -1,0 +1,272 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+- Very Dark Grayish Blue: hsl(217, 19%, 35%)
+- Desaturated Dark Blue: hsl(214, 17%, 51%)
+- Grayish Blue: hsl(212, 23%, 69%)
+- Light Grayish Blue: hsl(210, 46%, 95%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 13px
+
+### Headings
+
+- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
+- Weights: 500, 700
+
+## Icons
+
+We provide SVGs for the social icons. But please feel free to use a font icon library if you like. Some suggestions can be found below:
+
+- [Font Awesome](https://fontawesome.com)
+- [IcoMoon](https://icomoon.io)
+- [Ionicons](https://ionicons.com)
+*/
+
+html{
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+
+body{
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    padding: 0 40px;
+}
+
+.main{
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: hsl(0, 0%, 100%);
+    width: 700px;
+    height: 265px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px lightgray;
+}
+
+.card__img{
+    width: 40%;   
+}
+
+.img__drawers{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.card__data{
+    width: 60%;
+    padding: 20px;
+}
+
+.data__title{
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+    font-size: 20px;
+    width: 320px;
+}
+
+.data__paragraph{
+    color: hsl(214, 17%, 51%);
+    line-height: 1.5;
+}
+
+.data__people{
+    width: 380px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.img__avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.people__info{
+    margin-left: 10px;
+}
+
+.people__info p{
+    margin:0 0 5px 0;
+}
+
+.info__name{
+    font-weight: 700;
+    text-transform: capitalize;
+    color: hsl(217, 19%, 35%);
+}
+
+.info__date{
+    color: hsl(212, 23%, 69%);
+}
+
+.link__share{
+    position:absolute;
+    right: 5%; 
+    top: 10%;
+    width: 40px;
+    height: 40px;
+    background-color:hsl(210, 46%, 95%);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.people__share {
+    position: absolute;
+    background-color: #48556a;
+    color: hsl(212, 23%, 69%);
+    width: 240px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 30px;
+    border-radius: 10px;
+    top: -75px;
+    right: -80px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.people__share::before{
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #48556a;
+}
+
+.share__text{
+    letter-spacing: 5px;
+}
+
+.share__link{
+    width: 20px;
+    height: 20px;
+}
+
+.share__link:last-of-type{
+    display: none;
+}
+
+@media (hover: hover){
+    .link__share:hover,
+    .link--2:hover{
+        cursor: pointer;
+    }
+}
+
+
+@media only screen and (max-width:880px){
+  
+    .card{
+        flex-wrap: wrap;
+        height: auto;
+        width: 320px;
+        text-align: center;
+    }
+
+    .card__img,
+    .card__data{
+        width: 100%;
+    }
+
+    .img__drawers{
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card__data{
+        padding: 0;
+    }
+
+   
+    .data__title,
+    .data__paragraph,
+    .data__people{
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .data__title{
+        padding-top: 20px;
+    }
+
+
+    .data__people{
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .img__avatar{
+        width: 35px;
+        height: 35px;
+    }
+
+    .people__share{
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .people__share::before{
+        display: none;
+    }
+
+    .link__share{
+        right: 10%; 
+        top: 10%;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+    }
+    .share__link:last-of-type{
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width:400px){
+    body{
+        font-size: 12px;
+    }
+}
+
+.active{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 0;
+    transition: opacity .7s ease-in-out 0s;
+}
